@@ -1,0 +1,220 @@
+
+.top-card.col-lg-4{
+    margin-top: 19rem;
+    color: #001A9C;
+}
+.card-text.fw-bold.card-title.h5{
+    background: -webkit-linear-gradient(294.72deg, #001A9C 79.28%, #0068FF 9.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+.time-card{
+    margin-top: 24rem;
+}
+.button-card{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+}
+.button-card2{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    margin-left: 9.5rem;
+}
+.token-text{
+    font-size: 60%;
+}
+.read-btn{
+    top: 79.2rem;
+    left: 43rem;
+}
+.card-sec{
+    background: url('/public/image/bg-img982.png');
+    background-repeat: no-repeat;
+}
+.icon-img{
+    bottom: 86%;
+    left: 38%;
+}
+.icon-img1{
+    bottom: 83%;
+    left: 38%;
+}
+.icon-img2{
+    bottom: 86%;
+    left: 38%;
+}
+.futer-text{
+    background: -webkit-linear-gradient(294.72deg, #001A9C 79.28%, #0068FF 9.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.card-text1{
+    background: -webkit-linear-gradient(294.72deg, #001A9C 79.28%, #0068FF 9.05%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn2{
+    background: -webkit-linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-card{
+    background: url('/public/image/Mask group.png');
+    background-size: cover;
+}
+.sp-text{
+    background: -webkit-linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-child-card {
+    margin: 14rem 0 16rem 0;
+}
+.Card-Title.fs-1.fw-bold.card-title.h5{
+    background: -webkit-linear-gradient(294.72deg, #001A9C 79.28%, #0068FF 9.05%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+td.avt-text {
+    font-size: 84%;
+}
+.text-tb.text-secondary.text-center.card-title.h5{
+    font-size: 1.20rem;
+}
+.avt-card{
+    background: url('/public/image/boy-img.png');
+    background-repeat: no-repeat;
+}
+.avt-child-card {
+    margin: 13.5rem 0 7rem 0;
+}
+.button-detali{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+}
+.button-join{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    left: 8.5rem;
+}
+.cardbtn{
+    left: 37rem;
+    top: 445.5rem;
+}
+.num-img{
+    bottom: 74%;
+    left: 38%;
+}
+.doc-card{
+    background: url('/public/image/doc-img.png');
+    background-repeat: no-repeat;
+}
+
+.doc-child-card {
+    margin: 8rem 0 6rem 0;
+}
+::placeholder {
+    color: rgb(25, 25, 158);
+    font-weight: 500;
+}
+.card-text2{
+ font-size: .8rem;
+}
+.use-card{
+    bottom: 17.5rem;
+    left: 6rem;
+}
+.you-card{
+    bottom: 1.7rem;
+    left: .3rem;
+}
+.per-card {
+    bottom: 6.1rem;
+    left: 0.3rem;
+}
+.cal-card {
+    right: 57rem;
+    top: 25rem;
+}
+/* .ICO-btn.position-absolute {
+    bottom: 28rem;
+    left: 4rem;
+}
+.ICO-btn1.position-absolute {
+    bottom: 27rem;
+    left: 4rem;
+} */
+.ord-btn.position-absolute {
+    top: 27.5rem;
+    left: 4.7rem;
+}
+
+
+
+@media only screen and (device-width: 768px) {
+    .time-card {
+        margin-top: 5rem;
+    }
+    .read-btn {
+        top: 47.2rem;
+        left: 20rem;
+    }
+    .top-card.col-lg-4 {
+        margin-top: 5rem;
+    }
+    .cardbtn {
+        left: 15rem;
+        top: 390.5rem;
+    }
+}
+@media only screen and (max-device-width: 425px) {
+    .time-card {
+        margin-top: 4rem;
+    }
+    .read-btn {
+        top: 79.2rem;
+        left: 10rem;
+    }
+    .top-card.col-lg-4 {
+        margin-top: 3rem;
+    }
+    .button-card2 {
+        margin-left: 7.5rem;
+    }
+    .avt-child-card {
+        margin: -0.5rem 0 7rem 0;
+    }
+    .cardbtn {
+        left: 4.5rem;
+        top: 640.5rem;
+    }
+}
+@media only screen and (device-width: 375px) {
+    .cardbtn {
+        left: 2.9rem;
+        top: 654.5rem;
+    }
+    .button-card2 {
+        margin-left: 5rem;
+    }
+    .read-btn {
+        top: 79.2rem;
+        left: 8rem;
+    }
+    .top-card.col-lg-4 {
+        margin-top: 2rem;
+    }
+}
+@media only screen and (device-width: 320px) {
+    .cardbtn {
+        left: 0.9rem;
+        top: 675.5rem;
+    }
+    .button-card2 {
+        margin-left: 3.5rem;
+    }
+    .read-btn {
+        top: 80.2rem;
+        left: 7rem;
+    }
+    .top-card.col-lg-4 {
+        margin-top: 1rem;
+    }
+}

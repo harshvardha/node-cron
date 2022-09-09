@@ -1,0 +1,1 @@
+export default (address) => address.substr(0, 7) + "...." + address.substr(address.length - 7)

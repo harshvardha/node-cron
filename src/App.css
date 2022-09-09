@@ -1,0 +1,628 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    color: #262626;
+    font-family: 'Rubik';
+  }
+.nav-row{
+    background: linear-gradient(106.84deg, rgba(58, 27, 160, 0.79) 13.22%, rgba(229, 68, 109, 0.79) 90.94%);
+}
+.nav-link{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #262626 !important;
+}
+
+.nav-link.wh{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #ffffff !important;
+}
+.btn-pink{
+    background: #E5446D;
+    border-radius: 6px 0px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;    
+    border-color: #E5446D;
+}
+.btn-white{   
+    background-color: transparent; 
+    border-radius: 6px 0px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;    
+    border-color: #ffffff;
+}
+.span-text{
+    color: #FEEC66;
+}
+.head-text{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 80px;
+} 
+.head-text2{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight:500;
+    font-size: 25px;
+} 
+.para-text {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+}
+.btn-blue{
+    border: 2px solid white;
+    border-radius: 0px 6px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;    
+}
+.purple-card{
+    background: #542ED6;
+}
+.purple-card1{
+    background: #3e1fa8;
+}
+
+.col-vr {
+    border-right: 1px solid rgb(84 46 214)
+}
+.pur-text{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+}
+.pur-para{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    /* font-weight: 400; */
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+}
+.head{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+.para{
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+}
+.white-card{
+    border-radius: 6px 0px;
+    background-color: white !important;
+    top: -35px;
+    left: 91px;
+}
+.purple-head{
+    color: #542ED6 !important;
+}
+.purple-head{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.sec-para{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+.img-head{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 34px;
+}
+.img-text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.thumbnail {
+    position: relative;
+    margin-bottom: 0;
+    border: 0;
+    border-color: transparent;
+}
+
+.caption {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+}
+.caption-2{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    padding-left: 700px;
+}
+.card-block{
+    background-color: #542ED6;
+}
+.num-card{
+    background-color: #441FBF;
+}
+.small{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+}
+.num{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 72px;
+}
+.tab-head{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: #4321B7;
+}
+.icon-img{
+    width: 400px;
+}
+.tab-cell{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    background-color: #4C28C5;
+}
+.footer-content{
+    background-color: #3C1F9E;
+}
+
+/* Token Page */
+
+.Tokenblog{
+    background-image: linear-gradient(360deg, #c0c1c133, #ffffff70 10%);
+    /* background-color: #e9ecef70; */
+    height: 55rem;
+}
+
+.Tokenblog1 {
+    background-image: linear-gradient(360deg, #c0c1c133, #ffffff70 10%);
+    /* background-color: #e9ecef70; */
+    height: 75rem;
+}
+
+.tokenFirstBlog {
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    box-shadow: 1px 5px 5px 1px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+    color: #ffffff;
+}
+.buy-progressbar .progress-bar{
+
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    box-shadow: 1px 5px 5px 1px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+}
+.buy-progressbar .progress{ height: 30px; border-radius: 20px;}
+.float-right{ float: right;}
+.float-left{ float: left;}
+.w-20p{ width: 20%; float: left;}
+
+.tokenSecondBlog {
+    background-color: #c0c1c133; 
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+    height: 24rem;
+}
+
+.tokenThirdBlog {
+    background-color: rgb(255 255 255) !important;
+    box-shadow: 0px 0px 9px rgb(34 35 58 / 15%);
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+}
+
+.Firstblogbtn {
+    background-color: rgb(255 255 255) !important;
+    box-shadow: 0px 0px 9px rgb(34 35 58 / 10%);
+    border-color: #c0c1c133 !important;
+    color: blue !important;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+.Firstblogbtn1 {
+    background-color: rgb(244 246 246) !important;
+    box-shadow: 0px 0px 9px rgb(34 35 58 / 12%);
+    border-color: #393f4500 !important;
+    color: #262626;
+    border-radius: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+.buy-astor-text-btn{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 800;
+}
+.user-box{
+    box-shadow: 1px 5px 5px 1px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+}
+.digitalwallet1{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    position: absolute;
+    padding: 20px;
+    border-radius: 50%;
+    margin-top: -3%;
+}
+.Firstblogbtn2 {
+    background-color: rgb(42, 14, 97) !important;
+    border-color: #393f4500 !important;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 50px;
+    color:white !important;    
+    font-weight: 700;
+}
+.shadow-box{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
+    border-radius: 50px;
+}
+.stay-card{
+    background: #FFFFFF;
+    box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 1%;
+    text-align: center;
+}
+.stay-card img{ 
+    margin-left: 38%;
+    margin-top: -13%;
+}
+.shadow-box-gray{
+    background: #F0F0F0;
+    /* opacity: 0.5; */
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 50px;
+}
+
+.shadow-box-light-gray{
+    background: #F0F0F0;
+    box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 5px;
+}
+.shadow-box-blue{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    box-shadow: 1px 5px 5px 1px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+    color: #FFF;
+    padding: 5px;
+}
+.text-blue{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+
+}
+.home-card-box{
+    background: #FFFFFF;
+    box-shadow: 1px 5px 5px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 23%;
+    margin: 1% 1% 1% 1%;
+    float: left;
+    padding: 25px;
+}
+.home-card-box img{position: absolute;
+    margin-top: -5%;
+    margin-left: 5%;}
+
+.exchange-card-box{
+    position: absolute;    
+    margin-top: 32%;
+}
+
+.opacity8{ opacity: 0.8;}
+.you-card{
+    margin-top: -20%;
+    margin-left: 12%;
+}
+.hand{ cursor: pointer;}
+.fs-7{ font-size: 0.75rem;}
+.p10-5{ padding: 10px 5px;}
+
+.Firstblogbtnblue {
+    background-image: linear-gradient(88deg, #383f6e, #2723e1c7 71%);
+    border:none !important;
+    color: white !important;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
+    /* position: absolute;
+    top: 86.1rem; */
+}
+.parcent-box{
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    margin-top: -40%;
+    margin-left: 25%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+}
+.calculation-box{
+    position: absolute;
+    background: #262626;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    margin-top: 14%;
+    margin-left: -45%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+}
+.text-blue2{
+    background: linear-gradient(294.72deg, #0068FF 9.05%, #001A9C 79.28%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.Social{
+    position: absolute;
+    top: 25rem;
+    RIGHT: 92rem;
+}
+.social-icon-box img{ width: 50px; height:50px;}
+
+.Font{
+    font-size: 12px;
+    font-family: Rubik;
+}
+
+.Font2 {
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Rubik;
+}
+
+.Font3 {
+    color: black;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: Rubik;
+}
+
+.Font4 {
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: Rubik;
+}
+
+.Font5 {
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Rubik;
+    line-height: 20px;
+    letter-spacing: 3px;
+}
+
+
+.blueFont {
+    background-image: linear-gradient(88deg, #383f6e, #2723e1c7 71%) !important;
+    /* color: rgb(101, 17, 219); */
+    font-weight:900;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    font-family: Rubik;
+    color: transparent;
+}
+
+.Firstblogbtn1img {
+    max-width: 1.5rem !important;
+}
+
+.FirstblogBlack {
+    background-color: black;
+    border-color: black;
+    color: white;
+    border-radius: 14px;
+}
+
+.no {
+    background-color: rgb(255 255 255) !important;
+    box-shadow: 0px 0px 9px rgb(34 35 58 / 3%);
+    border-color: #c0c1c133 !important;
+    color: black !important;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+.scroll-container {
+    height: 370px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #0a4ae030;
+    border-radius: 100px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-image: linear-gradient(180deg, #6936d0 0%, #708ad4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+@media screen and (min-device-width: 767px) and (max-device-width: 1025px) {
+    .blueFont {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-device-width: 424px) and (max-device-width: 768px) { 
+    .white-card{
+        left: 61px;
+    }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 425px) {
+    .white-card{
+        left: 0;
+    }
+    .text-responsive {
+        font-size: calc(40% + 1vw + 1vh);
+      }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 375px){
+    .white-card{
+        left: 0;
+    }
+    .text-responsive {
+        font-size: calc(40% + 1vw + 1vh);
+      }
+}
+@media screen and  (max-device-width: 320px) { 
+    .white-card{
+        left: 0;
+    }
+    .text-responsive {
+        font-size: calc(40% + 1vw + 1vh);
+      }
+  }
+
+  .news-btn {
+    font-family: poppinslight;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 6.8px 9px !important;
+    color: white;
+}
+
+@media only screen and (min-width: 1400px)
+{
+    .news-icon {
+    margin-left: 15rem;
+}
+}
+.news-icon {
+    float: right;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+}
+
+.txt-wh {
+    color: #ffffff;
+    padding: 1px 5px;
+}
+
+  input.news-btn::-webkit-input-placeholder {
+    color: #fff;
+    font-family:  'Poppins', sans-serif;
+}
+.hand_coin_bg{
+    background-image: url("./image/mid-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    min-height: 554px;
+}
+.table>:not(caption)>*>*{ border-bottom-width:0px;}
+.presale-tbl th{font-size: 16px;}
+.presale-tbl td{font-size: 14px;}
+.own-crypto{ background-color: #4C28C5;}
+.news-media img{ width: 100%; margin: 15px;}
+.news-media{ padding-left: 4rem;}
+.row {
+    --bs-gutter-x: 0rem;
+}
+.news-media .row {
+    --bs-gutter-x: 1.5rem;
+}
+.top-head{
+    color: #FFF;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+}
+
+.thumbnail1{
+    background-image:url(image/Cryptolution-New-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    padding-top: 20px;
+
+}
+.thumbnail1 h1{
+    margin-bottom: 20px;
+}
+.thumbnail1 h3{
+    color: #42bff5;
+    margin-bottom: 20px;
+}
+
+.thumbnail1 p{
+    font-size: 13px;
+}
+.text-justify{ text-align: justify !important;}
+.example-foot{ color: #c61aff;}
