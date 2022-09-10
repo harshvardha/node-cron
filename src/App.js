@@ -11,10 +11,9 @@ import IncomePage from './pages/IncomePage';
 import Landing from './PagesCopy/Landing';
 import Referral from "./pages/Referral";
 
-
 function App() {
 
-  return(
+  return (
     <div className="App">
       <Router>
         <Routes>
@@ -25,12 +24,12 @@ function App() {
           <Route path="/income-page" element={<IncomePage />} />
           <Route path="/Landing" element={<Landing />} />
           <Route path="/Referral" element={<Referral />} />
-          
+
         </Routes>
       </Router>
-  </div>);
-  
-  
+    </div>);
+
+
 }
 
 export default App;

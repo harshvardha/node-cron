@@ -1,12 +1,12 @@
 import React from 'react';
 import { useContext } from "react"
 import { AstroTokenContext } from '../context/astroTokenContext';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, Dropdown } from 'react-bootstrap';
 import Group from '../image/Group 329.png';
-import addressShortener from "../utils/addressShortner"
+import addressShortner from "../utils/addressShortner"
 
 const HeaderCopy = () => {
-  const { userAddress, connectWallet } = useContext(AstroTokenContext)
+  const { userAddress, connectWallet, logoutUser } = useContext(AstroTokenContext)
 
   return (
     <>
@@ -31,7 +31,15 @@ const HeaderCopy = () => {
                   className='Firstblogbtnblue ms-5'
                   onClick={connectWallet}>CONNECT WALLET</Button>
               ) : (
-                <p>{addressShortener(userAddress)}</p>
+                <Dropdown>
+                  <Dropdown.Toggle variant='success' id='logout'>
+                    {addressShortner(userAddress)}
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={logoutUser}>Logout</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+                // <p>{addressShortener(userAddress)}</p>
               )
               }
             </div>

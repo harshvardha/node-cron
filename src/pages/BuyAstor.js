@@ -21,10 +21,41 @@ import telegram from '../image/telegram.png';
 import BuyAstorImg from '../image/Hero_Text.png';
 import msg from '../image/msg.png';
 import youtube from '../image/youtube.png';
+import { TOKEN_RATE_IN_STAGE } from "../utils/constants";
+import addressShortner from "../utils/addressShortner"
+
 const BuyAstor = () => {
-    const { stage, price, buyAstroToken } = useContext(AstroTokenContext)
+    const {
+        userAddress,
+        stage,
+        totalTokens,
+        totalTokensBought,
+        allReferals,
+        eligibleAmount,
+        refferalIncome,
+        transactionFee,
+        updateTotalTokens,
+        updatePrice,
+        buyAstroToken,
+        updateTransactionFees
+    } = useContext(AstroTokenContext)
+
     const [amount, setAmount] = useState(0)
     const [currentCurrency, setCurrentCurrency] = useState("BNB")
+
+    const setCurrency = (currency) => {
+        updatePrice(currency)
+        if (amount >= 50)
+            updateTotalTokens(amount)
+        updateTransactionFees()
+        setCurrentCurrency(currency)
+    }
+
+    const updateAmount = (investAmount) => {
+        setAmount(investAmount)
+        updateTotalTokens(investAmount)
+        updateTransactionFees()
+    }
 
     const buyToken = () => {
         if (amount < 50) {
@@ -86,14 +117,14 @@ const BuyAstor = () => {
                                                                 value={amount}
                                                                 className="form-control Firstblogbtn1"
                                                                 placeholder="$1000"
-                                                                onChange={(event) => setAmount(event.target.value)}
+                                                                onChange={(event) => updateAmount(event.target.value)}
                                                             />
                                                         </div>
                                                     </Col>
                                                     <Col xs={12} md={12} lg={4} style={{ marginLeft: '4rem' }}>
                                                         <Card.Text className="text-center Font">YOU GET </Card.Text>
                                                         <div className="d-grid">
-                                                            <button className="btn btn-primary Firstblogbtn2" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>10'000</span></button>
+                                                            <button className="btn btn-primary Firstblogbtn2" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{amount * TOKEN_RATE_IN_STAGE[stage]}</span></button>
                                                         </div>
                                                     </Col>
                                                 </Row>
@@ -105,7 +136,7 @@ const BuyAstor = () => {
                                                             <select
                                                                 className="form-control Firstblogbtn1"
                                                                 value={currentCurrency}
-                                                                onChange={(event) => setCurrentCurrency(event.target.value)}
+                                                                onChange={(event) => setCurrency(event.target.value)}
                                                             >
                                                                 <option value="BNB">BNB</option>
                                                                 <option value="BUSD">BUSD</option>
@@ -139,7 +170,7 @@ const BuyAstor = () => {
                                                                 <Card.Text className="text-start"> Rate </Card.Text>
                                                             </Col>
                                                             <Col xs={12} md={12} lg={6}>
-                                                                <Card.Text className="text-start">1 Token = $ 0.01 </Card.Text>
+                                                                <Card.Text className="text-start">1 Token = $ {TOKEN_RATE_IN_STAGE[stage]} </Card.Text>
                                                             </Col>
                                                         </Row>
                                                         <Row className='mt-2'>
@@ -155,7 +186,7 @@ const BuyAstor = () => {
                                                                 <Card.Text className="text-start"> Total Tokens </Card.Text>
                                                             </Col>
                                                             <Col xs={12} md={12} lg={6}>
-                                                                <Card.Text className="text-start">10’000 Astor </Card.Text>
+                                                                <Card.Text className="text-start">{amount * TOKEN_RATE_IN_STAGE[stage]} Astor </Card.Text>
                                                             </Col>
                                                         </Row>
                                                         <Row className='mt-2'>
@@ -179,7 +210,7 @@ const BuyAstor = () => {
                                                                 <Card.Text className="text-start"> Transaction fee </Card.Text>
                                                             </Col>
                                                             <Col xs={12} md={12} lg={6}>
-                                                                <Card.Text className="text-start">0.00345 BNB </Card.Text>
+                                                                <Card.Text className="text-start">{transactionFee} BNB </Card.Text>
                                                             </Col>
                                                         </Row>
                                                         <Row className='mt-2'>
@@ -239,21 +270,21 @@ const BuyAstor = () => {
                                         <Col xs={12} md={10} lg={12}>
                                             <Row style={{ marginLeft: '4rem' }} className="mt-3">
                                                 <Col xs={12} md={12} lg={4}>
-                                                    <Card.Text className="text-center Font2"> You (0x...34fB) purchased </Card.Text>
+                                                    <Card.Text className="text-center Font2"> You ({addressShortner(userAddress)}) purchased </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary no" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>19’000’000 ASTOR</span></button>
+                                                        <button className="btn btn-primary no" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{totalTokensBought} ASTOR</span></button>
                                                     </div>
                                                 </Col>
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2">Direct affiliates via your referral link </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary no" type="button">16</button>
+                                                        <button className="btn btn-primary no" type="button">{allReferals}</button>
                                                     </div>
                                                 </Col>
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2">Total team partners </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary no" type="button">16</button>
+                                                        <button className="btn btn-primary no" type="button">{allReferals}</button>
                                                     </div>
                                                 </Col>
                                             </Row>
@@ -265,19 +296,19 @@ const BuyAstor = () => {
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2"> Total comission from your referrals </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary Firstblogbtn" type="button">BUSD 11,017.80</button>
+                                                        <button className="btn btn-primary Firstblogbtn" type="button">USD {refferalIncome}</button>
                                                     </div>
                                                 </Col>
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2">Total turnover </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary Firstblogbtn" type="button">BUSD 164,000.00</button>
+                                                        <button className="btn btn-primary Firstblogbtn" type="button">USD {refferalIncome}</button>
                                                     </div>
                                                 </Col>
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2">Eligible pool </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary Firstblogbtn" type="button">BUSD 836,000.000</button>
+                                                        <button className="btn btn-primary Firstblogbtn" type="button">USD {eligibleAmount}</button>
                                                     </div>
                                                     <p className='Font4 text-center mt-2'>Remaining for Pool 1</p>
                                                 </Col>
