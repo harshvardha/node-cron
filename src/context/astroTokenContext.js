@@ -105,7 +105,7 @@ const AstroTokenContextProvider = ({ children }) => {
             const refIncome = await icoContract.methods.referalIncome(userAddr).call()
             setTotalTokensBought(fromWei(tokensBought))
             setAllReferals(referals.length)
-            setRefferalIncome(refIncome)
+            setRefferalIncome(fromWei(refIncome))
         } catch (error) {
             console.error(error)
         }
@@ -151,33 +151,33 @@ const AstroTokenContextProvider = ({ children }) => {
     const buyAstroToken = async (amount, currency) => {
         try {
             const { icoContract, busdContract } = createContractInstance()
-        let currentPrice, currencyAddress, noOfTokens
-        console.log("user address: ", userAddress)
-        console.log("bnb address: ", BNB_ADDRESS)
-        console.log("busd address: ", BUSD_ADDRESS)
-        if (currency === "BNB") {
-            currencyAddress = BNB_ADDRESS
-            currentPrice = await icoContract.methods.getPrice(BNB_ADDRESS).call()
-            console.log(currentPrice,"if")
-            noOfTokens = toWei(amount / (currentPrice / 100000000))
-            await icoContract.methods.buyToken(currencyAddress, noOfTokens, userAddress)
-                .send({ from: userAddress, value: noOfTokens }).on('transactionHash', (hash) => {
-                    console.log("BNB Transaction Confirmed")
-                    updateTotalTokensBought()
-                })
-        } else if (currency === "BUSD") {
-            currencyAddress = BUSD_ADDRESS
-            console.log(busdContract)
-            currentPrice = await icoContract.methods.getPrice(BUSD_ADDRESS).call()
-            console.log(currentPrice,"else")
-            noOfTokens = toWei(amount / (currentPrice / 100000000))
-            await busdContract.methods.approve(ICO_CONTRACT_ADDRESS, noOfTokens).send({ from: userAddress })
-            await icoContract.methods.buyToken(currencyAddress, noOfTokens, userAddress)
-                .send({ from: userAddress }).on('transactionHash', (hash) => {
-                    console.log("BUSD Transaction Confirmed")
-                    updateTotalTokensBought()
-                })
-        }
+            let currentPrice, currencyAddress, noOfTokens
+            console.log("user address: ", userAddress)
+            console.log("bnb address: ", BNB_ADDRESS)
+            console.log("busd address: ", BUSD_ADDRESS)
+            if (currency === "BNB") {
+                currencyAddress = BNB_ADDRESS
+                currentPrice = await icoContract.methods.getPrice(BNB_ADDRESS).call()
+                console.log(currentPrice, "if")
+                noOfTokens = toWei(amount / (currentPrice / 100000000))
+                await icoContract.methods.buyToken(currencyAddress, noOfTokens, userAddress)
+                    .send({ from: userAddress, value: noOfTokens }).on('transactionHash', (hash) => {
+                        console.log("BNB Transaction Confirmed")
+                        updateTotalTokensBought()
+                    })
+            } else if (currency === "BUSD") {
+                currencyAddress = BUSD_ADDRESS
+                console.log(busdContract)
+                currentPrice = await icoContract.methods.getPrice(BUSD_ADDRESS).call()
+                console.log(currentPrice, "else")
+                noOfTokens = toWei(amount / (currentPrice / 100000000))
+                await busdContract.methods.approve(ICO_CONTRACT_ADDRESS, noOfTokens).send({ from: userAddress })
+                await icoContract.methods.buyToken(currencyAddress, noOfTokens, userAddress)
+                    .send({ from: userAddress }).on('transactionHash', (hash) => {
+                        console.log("BUSD Transaction Confirmed")
+                        updateTotalTokensBought()
+                    })
+            }
         } catch (error) {
             console.log(error)
         }
@@ -194,11 +194,11 @@ const AstroTokenContextProvider = ({ children }) => {
         setTransactionFee(0)
     }
 
-    const getPoolElegible = async(address) => {
+    const getPoolElegible = async (address) => {
         try {
             const { icoContract, busdContract } = createContractInstance()
             const elegible = await icoContract.methods.getPoolAndAmount(address).call()
-            setEligibalAmount(elegible?.amountRemaining/Math.pow(10,8))
+            setEligibalAmount(elegible?.amountRemaining / Math.pow(10, 8))
             setPoolForUser(elegible?.pool)
         } catch (error) {
             console.log(error)
