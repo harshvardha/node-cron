@@ -22,7 +22,7 @@ const toWei = (amount) => Web3.utils.toWei(amount.toString(), 'ether')
 const fromWei = (amount) => Web3.utils.fromWei(amount.toString(), 'ether')
 
 function createContractInstance() {
-    const provider = new Web3(BSC_TESTNET_RPC)
+    const provider = new Web3(Web3.givenProvider || BSC_TESTNET_RPC)
     const icoContract = new provider.eth.Contract(icoABI, ICO_CONTRACT_ADDRESS)
     const busdContract = new provider.eth.Contract(busdABI, BUSD_CONTRACT_ADDRESS)
     const refferalContract = new provider.eth.Contract(refferalABI, REFFERAL_CONTRACT_ADDRESS)
@@ -39,6 +39,7 @@ const AstroTokenContextProvider = ({ children }) => {
     const [eligibleAmount, setEligibalAmount] = useState(0)
     const [refferalIncome, setRefferalIncome] = useState(0)
     const [transactionFee, setTransactionFee] = useState(0)
+    const [poolForUser, setPoolForUser] = useState(0)
 
     const _checkForNetwork = async () => {
         const provider = new Web3(ethereum)
@@ -101,11 +102,9 @@ const AstroTokenContextProvider = ({ children }) => {
             getDataWithoutUserAddress()
             const tokensBought = await icoContract.methods.tokenBoughtUser(userAddr).call()
             const referals = await refferalContract.methods.getAllRefrees(userAddr).call()
-            const eligibleAmount = await icoContract.methods.getEligibleAmount(userAddr).call()
             const refIncome = await icoContract.methods.referalIncome(userAddr).call()
             setTotalTokensBought(fromWei(tokensBought))
             setAllReferals(referals.length)
-            setEligibalAmount(eligibleAmount.amount)
             setRefferalIncome(refIncome)
         } catch (error) {
             console.error(error)
@@ -150,7 +149,8 @@ const AstroTokenContextProvider = ({ children }) => {
     }
 
     const buyAstroToken = async (amount, currency) => {
-        const { icoContract, busdContract } = createContractInstance()
+        try {
+            const { icoContract, busdContract } = createContractInstance()
         let currentPrice, currencyAddress, noOfTokens
         console.log("user address: ", userAddress)
         console.log("bnb address: ", BNB_ADDRESS)
@@ -158,6 +158,7 @@ const AstroTokenContextProvider = ({ children }) => {
         if (currency === "BNB") {
             currencyAddress = BNB_ADDRESS
             currentPrice = await icoContract.methods.getPrice(BNB_ADDRESS).call()
+            console.log(currentPrice,"if")
             noOfTokens = toWei(amount / (currentPrice / 100000000))
             await icoContract.methods.buyToken(currencyAddress, noOfTokens, userAddress)
                 .send({ from: userAddress, value: noOfTokens }).on('transactionHash', (hash) => {
@@ -168,6 +169,7 @@ const AstroTokenContextProvider = ({ children }) => {
             currencyAddress = BUSD_ADDRESS
             console.log(busdContract)
             currentPrice = await icoContract.methods.getPrice(BUSD_ADDRESS).call()
+            console.log(currentPrice,"else")
             noOfTokens = toWei(amount / (currentPrice / 100000000))
             await busdContract.methods.approve(ICO_CONTRACT_ADDRESS, noOfTokens).send({ from: userAddress })
             await icoContract.methods.buyToken(currencyAddress, noOfTokens, userAddress)
@@ -176,6 +178,9 @@ const AstroTokenContextProvider = ({ children }) => {
                     updateTotalTokensBought()
                 })
         }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const logoutUser = () => {
@@ -183,13 +188,24 @@ const AstroTokenContextProvider = ({ children }) => {
         setUserAddress("")
     }
 
+    const getPoolElegible = async(address) => {
+        try {
+            const { icoContract, busdContract } = createContractInstance()
+            const elegible = await icoContract.methods.getPoolAndAmount(address).call()
+            setEligibalAmount(elegible?.amountRemaining/Math.pow(10,8))
+            setPoolForUser(elegible?.pool)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         getDataWithoutUserAddress()
         const address = localStorage.getItem('userAddress')
         if (address !== "undefined" && address !== null) {
-            console.log("hello")
             setUserAddress(address)
             getData(address)
+            getPoolElegible(address)
         }
     }, [])
 
@@ -209,7 +225,8 @@ const AstroTokenContextProvider = ({ children }) => {
                 updatePrice,
                 buyAstroToken,
                 updateTransactionFees,
-                logoutUser
+                logoutUser,
+                poolForUser
             }}
         >
             {children}

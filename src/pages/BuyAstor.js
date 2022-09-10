@@ -37,7 +37,8 @@ const BuyAstor = () => {
         updateTotalTokens,
         updatePrice,
         buyAstroToken,
-        updateTransactionFees
+        updateTransactionFees,
+        poolForUser
     } = useContext(AstroTokenContext)
 
     const [amount, setAmount] = useState(0)
@@ -58,7 +59,7 @@ const BuyAstor = () => {
     }
 
     const buyToken = () => {
-        if (amount < 50) {
+        if (amount <= 50) {
             return window.alert("Minimum amount allowed is $50")
         }
         buyAstroToken(amount, currentCurrency)
@@ -272,7 +273,7 @@ const BuyAstor = () => {
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2"> You ({addressShortner(userAddress)}) purchased </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary no" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{totalTokensBought} ASTOR</span></button>
+                                                        <button className="btn btn-primary no" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{Number(totalTokensBought).toFixed(4)} ASTOR</span></button>
                                                     </div>
                                                 </Col>
                                                 <Col xs={12} md={12} lg={4}>
@@ -310,7 +311,7 @@ const BuyAstor = () => {
                                                     <div className="d-grid mx-2">
                                                         <button className="btn btn-primary Firstblogbtn" type="button">USD {eligibleAmount}</button>
                                                     </div>
-                                                    <p className='Font4 text-center mt-2'>Remaining for Pool 1</p>
+                                                    <p className='Font4 text-center mt-2'>Remaining for Pool {poolForUser}</p>
                                                 </Col>
                                             </Row>
                                         </Col>
