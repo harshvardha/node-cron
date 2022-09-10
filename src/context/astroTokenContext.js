@@ -22,7 +22,7 @@ const toWei = (amount) => Web3.utils.toWei(amount.toString(), 'ether')
 const fromWei = (amount) => Web3.utils.fromWei(amount.toString(), 'ether')
 
 function createContractInstance() {
-    const provider = new Web3(BSC_TESTNET_RPC)
+    const provider = new Web3(Web3.givenProvider || BSC_TESTNET_RPC)
     const icoContract = new provider.eth.Contract(icoABI, ICO_CONTRACT_ADDRESS)
     const busdContract = new provider.eth.Contract(busdABI, BUSD_CONTRACT_ADDRESS)
     const refferalContract = new provider.eth.Contract(refferalABI, REFFERAL_CONTRACT_ADDRESS)
@@ -181,6 +181,12 @@ const AstroTokenContextProvider = ({ children }) => {
     const logoutUser = () => {
         localStorage.removeItem('userAddress')
         setUserAddress("")
+        setTotalTokens(0)
+        setTotalTokensBought(0)
+        setAllReferals(0)
+        setEligibalAmount(0)
+        setRefferalIncome(0)
+        setTransactionFee(0)
     }
 
     useEffect(() => {

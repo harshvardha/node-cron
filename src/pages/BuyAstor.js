@@ -272,7 +272,7 @@ const BuyAstor = () => {
                                                 <Col xs={12} md={12} lg={4}>
                                                     <Card.Text className="text-center Font2"> You ({addressShortner(userAddress)}) purchased </Card.Text>
                                                     <div className="d-grid mx-2">
-                                                        <button className="btn btn-primary no" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{totalTokensBought} ASTOR</span></button>
+                                                        <button className="btn btn-primary no" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{Number(totalTokensBought).toFixed(4)} ASTOR</span></button>
                                                     </div>
                                                 </Col>
                                                 <Col xs={12} md={12} lg={4}>
