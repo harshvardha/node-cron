@@ -125,7 +125,7 @@ const BuyAstor = () => {
                                                     <Col xs={12} md={12} lg={4} style={{ marginLeft: '4rem' }}>
                                                         <Card.Text className="text-center Font">YOU GET </Card.Text>
                                                         <div className="d-grid">
-                                                            <button className="btn btn-primary Firstblogbtn2" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{amount * TOKEN_RATE_IN_STAGE[stage]}</span></button>
+                                                            <button className="btn btn-primary Firstblogbtn2" type="button"><img src={astor_logo} className="float-start Firstblogbtn1img" /> <span style={{ marginRight: '1rem' }}>{amount / TOKEN_RATE_IN_STAGE[stage]}</span></button>
                                                         </div>
                                                     </Col>
                                                 </Row>
@@ -187,7 +187,7 @@ const BuyAstor = () => {
                                                                 <Card.Text className="text-start"> Total Tokens </Card.Text>
                                                             </Col>
                                                             <Col xs={12} md={12} lg={6}>
-                                                                <Card.Text className="text-start">{amount * TOKEN_RATE_IN_STAGE[stage]} Astor </Card.Text>
+                                                                <Card.Text className="text-start">{amount / TOKEN_RATE_IN_STAGE[stage]} Astor </Card.Text>
                                                             </Col>
                                                         </Row>
                                                         <Row className='mt-2'>
